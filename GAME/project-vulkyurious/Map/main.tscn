@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://b7ecf64sifndt"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_pnt44"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_g72r7"]
+
+[node name="Main" type="Node3D" unique_id=519853641]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=298697337]
+transform = Transform3D(100, 0, 0, 0, 10, 0, 0, 0, 100, 0, 0, 0)
+mesh = SubResource("PlaneMesh_pnt44")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="MeshInstance3D" unique_id=1118373580]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="MeshInstance3D/StaticBody3D" unique_id=535787419]
+transform = Transform3D(2, 0, 0, 0, 1, 0, 0, 0, 2, 0, 0, 0)
+shape = SubResource("BoxShape3D_g72r7")
+debug_color = Color(0.1740928, 0.51652217, 0.99999994, 0.41960785)

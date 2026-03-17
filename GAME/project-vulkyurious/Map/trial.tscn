@@ -1,0 +1,33 @@
+[gd_scene format=3 uid="uid://bf6lac5tyx5mc"]
+
+[ext_resource type="PackedScene" uid="uid://b7ecf64sifndt" path="res://Map/main.tscn" id="1_2h6fy"]
+[ext_resource type="PackedScene" uid="uid://buiynjc32lvtv" path="res://characters/player.tscn" id="2_2h6fy"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_2h6fy"]
+turbidity = 0.0
+sun_disk_scale = 24.28
+ground_color = Color(0.5047751, 0.7422955, 0.41544527, 1)
+
+[sub_resource type="Sky" id="Sky_rymd7"]
+sky_material = SubResource("PhysicalSkyMaterial_2h6fy")
+
+[sub_resource type="Environment" id="Environment_8bglo"]
+background_mode = 2
+sky = SubResource("Sky_rymd7")
+ambient_light_source = 3
+fog_density = 0.0238
+
+[node name="trial" type="Node3D" unique_id=1323774063]
+
+[node name="Main" parent="." unique_id=519853641 instance=ExtResource("1_2h6fy")]
+transform = Transform3D(1, 0, -2.9802322e-08, 0, 1, 0, -2.9802322e-08, 0, 1, -0.10497475, 1.9073486e-06, -0.004953623)
+
+[node name="player" parent="Main" unique_id=638207324 instance=ExtResource("2_2h6fy")]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="." unique_id=550440306]
+environment = SubResource("Environment_8bglo")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="." unique_id=802314039]
+transform = Transform3D(0.7071068, -0.5, 0.5, 0, 0.7071068, 0.70710677, -0.7071068, -0.5, 0.5, -27.721899, 17.961512, -0.8347559)
+light_energy = 2.0
+shadow_enabled = true
